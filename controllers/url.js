@@ -15,7 +15,7 @@ async function handlegeneratenewshorturl(req,res){
     });
      
     return res.render("home.ejs",{
-        id: shortId,  //this is the data pass to home.ejs, so we can access it inb front-endd
+        id: shortId,  //this is the data pass to home.ejs, so we can access it inb front-end
      });
     
     

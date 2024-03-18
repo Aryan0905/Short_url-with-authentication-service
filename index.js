@@ -32,25 +32,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false })); // to parse the data from the form
 app.use(cookieParser());
 
-
-
-
 app.use("/url",restricttouserlogin, urlroute);
 app.use("/",checkAuth, staticrouter);
 app.use("/user", userRouter);
-
-app.get("/:shortId", async (req, res) => {
-    const shortId = req.params.shortId;
-    console.log(shortId);
-    const entry = await URL.findOne({
-      shortId,
-    });
-    if (entry) {
-        res.redirect(entry.redirectURL);
-    } else {
-        res.status(404).send("URL not found");
-    }
-  });
-
 
 app.listen(PORT, () => console.log(`Server is running on port ${PORT}`));

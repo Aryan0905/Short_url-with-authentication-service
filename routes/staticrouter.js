@@ -9,13 +9,13 @@ router.get('/',async(req,res)=>{
     const allurls = await URL.find({ createdBy : req.user._id});
     console.log("I am here.");
     return res.render("home.ejs",{
-        urls: allurls,  //this is the data pass to home.ejs, so we can access it in front-endd
+        urls: allurls,  //this is the data pass to home.ejs, so we can access it in front-end
     });
 }
 );
 
 
-router.post('/',handlegeneratenewshorturl);
+// router.post('/',handlegeneratenewshorturl);
 
 router.get('/signup',(req,res)=>{
     return res.render("signup.ejs");

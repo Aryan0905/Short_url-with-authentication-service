@@ -8,6 +8,7 @@ async function restricttouserlogin(req, res, next) {
 
     const founduser = getuser(useruid);
     if (!founduser) {
+        console.log('NO USER FOUND!');
         return res.redirect("/login");
     }
     req.user = founduser;
